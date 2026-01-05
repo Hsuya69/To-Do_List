@@ -6,7 +6,11 @@ export default defineConfig({
   server:{
     allowedHosts:"all"
   },
+  
   plugins: [react()],
+  build:{
+    outDir: 'build'
+  }
 })
 
 
