@@ -1,0 +1,6 @@
+2025-11-16 17:26:47,198-users.py:9 - <module>()-CRITICAL-import error:cannot import name 'AsyncSession' from 'backend.App.db' (C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\db\__init__.py)
+2025-11-16 17:31:55,283-insert.py:9 - <module>()-CRITICAL-import error:cannot import name 'user' from 'backend.App.db' (C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\db\__init__.py)
+2025-11-16 17:32:05,759-delete.py:9 - <module>()-CRITICAL-import error:cannot import name 'get_db' from 'backend.App.db' (C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\db\__init__.py)
+2025-11-16 20:04:13,847-users.py:9 - <module>()-CRITICAL-import error:No module named 'App'
+2025-11-16 20:04:53,703-users.py:9 - <module>()-CRITICAL-import error:No module named 'App'
+2025-11-16 20:08:08,861-users.py:9 - <module>()-CRITICAL-import error:No module named 'App'

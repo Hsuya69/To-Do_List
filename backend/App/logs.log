@@ -1,0 +1,47 @@
+2025-11-02 17:38:05,653-base_events.py:1864 - default_exception_handler()-ERROR-Future exception was never retrieved
+future: <Future finished exception=InternalClientError('got result for unknown protocol state 3')>
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\protocol.pyx", line 903, in asyncpg.protocol.protocol.BaseProtocol._dispatch_result
+asyncpg.exceptions._base.InternalClientError: got result for unknown protocol state 3
+2025-11-02 17:45:21,476-base_events.py:1864 - default_exception_handler()-ERROR-Future exception was never retrieved
+future: <Future finished exception=InternalClientError('got result for unknown protocol state 3')>
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\protocol.pyx", line 903, in asyncpg.protocol.protocol.BaseProtocol._dispatch_result
+asyncpg.exceptions._base.InternalClientError: got result for unknown protocol state 3
+2025-11-02 17:45:49,048-base_events.py:1864 - default_exception_handler()-ERROR-Future exception was never retrieved
+future: <Future finished exception=InternalClientError('got result for unknown protocol state 3')>
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\protocol.pyx", line 903, in asyncpg.protocol.protocol.BaseProtocol._dispatch_result
+asyncpg.exceptions._base.InternalClientError: got result for unknown protocol state 3
+2025-11-02 23:32:16,976-users.py:37 - signup()-ERROR-status:400 , signup error
+2025-11-02 23:32:16,979-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 400 Bad Request"
+2025-11-02 23:32:17,365-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:32:17,368-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:32:41,413-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:32:41,420-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:32:41,846-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:32:41,851-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:33:03,246-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:33:03,250-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:33:03,613-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:33:03,618-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:33:54,509-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:33:54,514-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:33:54,898-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:33:54,903-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:36:14,430-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:36:14,434-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:36:14,863-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:36:14,866-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:39:58,072-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:39:58,079-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:39:58,495-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:39:58,499-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 200 OK"
+2025-11-02 23:43:31,393-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:43:31,399-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 400 Bad Request"
+2025-11-02 23:43:31,809-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:43:31,812-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 400 Bad Request"
+2025-11-02 23:43:59,868-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:43:59,872-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 400 Bad Request"
+2025-11-02 23:44:00,257-users.py:26 - signup()-WARNING-status:400, username already exists
+2025-11-02 23:44:00,260-_client.py:1740 - _send_single_request()-INFO-HTTP Request: POST http://test/signup "HTTP/1.1 400 Bad Request"

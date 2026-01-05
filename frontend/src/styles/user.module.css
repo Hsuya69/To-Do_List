@@ -1,0 +1,99 @@
+.user h1{
+    font-family: impact;
+    color: rgb(218, 179, 255);
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: (50%,50%);
+}
+
+
+.newtask button{
+    font-family: Impact;
+    font: 49px;
+    background: #9e61bd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.3s ease;
+    padding: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+.newtask input{
+    color: #e2bde8;
+}
+
+.user button:hover {
+  background-color: #460751;
+}
+
+
+.user input {
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0; /* reduced vertical space */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  height: 20px;
+  background: #281d2bd9;
+  position: relative;
+  right: 23px;
+}
+
+.user a{
+    position: absolute;
+    bottom: 40px;
+    right: 90px;
+    color: rgba(226, 172, 250, 0.89);
+    font-family: impact;
+    text-decoration: none;
+}
+
+.user a:hover{
+    text-decoration: underline;
+    color: #8d6994;
+}
+
+.task {
+    background-color: #9e61bd;
+    padding: 6px;
+    border: #200325;
+    border-width: 12%;
+    border-radius: 12px;
+}
+
+.task li{
+    font-family: impact;
+    color: #ccc;
+    font-size: 23px;
+    margin: 23px;
+}
+
+.task button{
+    align-items: right;
+    font-family: Impact;
+    font: 49px;
+    background: #533f5d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.3s ease;
+    padding: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+.user p{
+    color: rgba(226, 172, 250, 0.89);
+    font-family: impact;
+    font-size: 23px;
+}

@@ -1,0 +1,617 @@
+2025-12-14 19:21:53,573 - INFO - INSERT INTO todolist (userid, task_name, task_status, user_state) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING todolist.taskid
+2025-12-14 19:21:53,662 - INFO - [generated in 0.08919s] (1, 'lolu', 'incomplete', 'login')
+2025-12-14 19:21:53,699 - INFO - COMMIT
+2025-12-14 19:21:53,731 - INFO - BEGIN (implicit)
+2025-12-14 19:21:53,751 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.taskid = $1::INTEGER
+2025-12-14 19:21:53,763 - INFO - [generated in 0.01240s] (1,)
+2025-12-14 19:21:53,792 - INFO - ROLLBACK
+2025-12-14 19:21:53,848 - INFO - BEGIN (implicit)
+2025-12-14 19:21:53,898 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:21:54,033 - INFO - [cached since 14.08s ago] ('user1',)
+2025-12-14 19:21:54,367 - INFO - ROLLBACK
+2025-12-14 19:21:55,889 - INFO - BEGIN (implicit)
+2025-12-14 19:21:55,891 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:21:55,894 - INFO - [cached since 47.09s ago] ('user1',)
+2025-12-14 19:21:55,901 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:21:55,906 - INFO - [generated in 0.00518s] (1, 1)
+2025-12-14 19:21:55,913 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:21:55,918 - INFO - [generated in 0.00426s] ('complete', 1)
+2025-12-14 19:21:55,936 - INFO - COMMIT
+2025-12-14 19:21:55,972 - INFO - BEGIN (implicit)
+2025-12-14 19:21:55,998 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:21:56,021 - INFO - [cached since 16.07s ago] ('user1',)
+2025-12-14 19:21:56,093 - INFO - ROLLBACK
+2025-12-14 19:22:01,873 - INFO - BEGIN (implicit)
+2025-12-14 19:22:01,875 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:01,880 - INFO - [cached since 53.08s ago] ('user1',)
+2025-12-14 19:22:01,888 - INFO - INSERT INTO todolist (userid, task_name, task_status, user_state) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING todolist.taskid
+2025-12-14 19:22:01,891 - INFO - [cached since 8.321s ago] (1, 'popo', 'incomplete', 'login')
+2025-12-14 19:22:01,910 - INFO - COMMIT
+2025-12-14 19:22:01,918 - INFO - BEGIN (implicit)
+2025-12-14 19:22:01,927 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.taskid = $1::INTEGER
+2025-12-14 19:22:01,941 - INFO - [cached since 8.194s ago] (2,)
+2025-12-14 19:22:01,960 - INFO - ROLLBACK
+2025-12-14 19:22:01,994 - INFO - BEGIN (implicit)
+2025-12-14 19:22:02,013 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:02,024 - INFO - [cached since 22.08s ago] ('user1',)
+2025-12-14 19:22:02,058 - INFO - ROLLBACK
+2025-12-14 19:22:19,209 - INFO - BEGIN (implicit)
+2025-12-14 19:22:19,215 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:19,223 - INFO - [cached since 70.42s ago] ('user1',)
+2025-12-14 19:22:19,248 - INFO - INSERT INTO todolist (userid, task_name, task_status, user_state) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING todolist.taskid
+2025-12-14 19:22:19,253 - INFO - [cached since 25.68s ago] (1, 'kiki', 'incomplete', 'login')
+2025-12-14 19:22:19,259 - INFO - COMMIT
+2025-12-14 19:22:19,267 - INFO - BEGIN (implicit)
+2025-12-14 19:22:19,271 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.taskid = $1::INTEGER
+2025-12-14 19:22:19,274 - INFO - [cached since 25.53s ago] (3,)
+2025-12-14 19:22:19,284 - INFO - ROLLBACK
+2025-12-14 19:22:19,302 - INFO - BEGIN (implicit)
+2025-12-14 19:22:19,309 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:19,313 - INFO - [cached since 39.37s ago] ('user1',)
+2025-12-14 19:22:19,324 - INFO - ROLLBACK
+2025-12-14 19:22:20,801 - INFO - BEGIN (implicit)
+2025-12-14 19:22:20,806 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:20,810 - INFO - [cached since 72.01s ago] ('user1',)
+2025-12-14 19:22:20,816 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:20,820 - INFO - [cached since 24.92s ago] (1, 3)
+2025-12-14 19:22:20,826 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:22:20,830 - INFO - [cached since 24.92s ago] ('complete', 3)
+2025-12-14 19:22:20,836 - INFO - COMMIT
+2025-12-14 19:22:20,858 - INFO - BEGIN (implicit)
+2025-12-14 19:22:20,864 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:20,868 - INFO - [cached since 40.92s ago] ('user1',)
+2025-12-14 19:22:20,879 - INFO - ROLLBACK
+2025-12-14 19:22:33,810 - INFO - BEGIN (implicit)
+2025-12-14 19:22:33,813 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:33,817 - INFO - [cached since 85.02s ago] ('user1',)
+2025-12-14 19:22:33,825 - INFO - INSERT INTO todolist (userid, task_name, task_status, user_state) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING todolist.taskid
+2025-12-14 19:22:33,828 - INFO - [cached since 40.26s ago] (1, 'chu cuh', 'incomplete', 'login')
+2025-12-14 19:22:33,834 - INFO - COMMIT
+2025-12-14 19:22:33,853 - INFO - BEGIN (implicit)
+2025-12-14 19:22:33,857 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.taskid = $1::INTEGER
+2025-12-14 19:22:33,860 - INFO - [cached since 40.12s ago] (4,)
+2025-12-14 19:22:33,872 - INFO - ROLLBACK
+2025-12-14 19:22:33,894 - INFO - BEGIN (implicit)
+2025-12-14 19:22:33,904 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:33,909 - INFO - [cached since 53.97s ago] ('user1',)
+2025-12-14 19:22:33,920 - INFO - ROLLBACK
+2025-12-14 19:22:35,483 - INFO - BEGIN (implicit)
+2025-12-14 19:22:35,485 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:35,487 - INFO - [cached since 86.69s ago] ('user1',)
+2025-12-14 19:22:35,491 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:35,493 - INFO - [cached since 39.6s ago] (1, 4)
+2025-12-14 19:22:35,496 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:22:35,498 - INFO - [cached since 39.59s ago] ('complete', 4)
+2025-12-14 19:22:35,500 - INFO - COMMIT
+2025-12-14 19:22:35,522 - INFO - BEGIN (implicit)
+2025-12-14 19:22:35,532 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:35,537 - INFO - [cached since 55.6s ago] ('user1',)
+2025-12-14 19:22:35,543 - INFO - ROLLBACK
+2025-12-14 19:22:36,625 - INFO - BEGIN (implicit)
+2025-12-14 19:22:36,627 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:36,630 - INFO - [cached since 87.83s ago] ('user1',)
+2025-12-14 19:22:36,634 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:36,637 - INFO - [cached since 40.74s ago] (1, 3)
+2025-12-14 19:22:36,641 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:22:36,643 - INFO - [cached since 40.74s ago] ('incomplete', 3)
+2025-12-14 19:22:36,646 - INFO - COMMIT
+2025-12-14 19:22:36,668 - INFO - BEGIN (implicit)
+2025-12-14 19:22:36,670 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:36,672 - INFO - [cached since 56.73s ago] ('user1',)
+2025-12-14 19:22:36,678 - INFO - ROLLBACK
+2025-12-14 19:22:37,662 - INFO - BEGIN (implicit)
+2025-12-14 19:22:37,665 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:37,667 - INFO - [cached since 88.87s ago] ('user1',)
+2025-12-14 19:22:37,673 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:37,675 - INFO - [cached since 41.78s ago] (1, 2)
+2025-12-14 19:22:37,679 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:22:37,682 - INFO - [cached since 41.78s ago] ('complete', 2)
+2025-12-14 19:22:37,686 - INFO - COMMIT
+2025-12-14 19:22:37,707 - INFO - BEGIN (implicit)
+2025-12-14 19:22:37,710 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:37,713 - INFO - [cached since 57.77s ago] ('user1',)
+2025-12-14 19:22:37,720 - INFO - ROLLBACK
+2025-12-14 19:22:38,755 - INFO - BEGIN (implicit)
+2025-12-14 19:22:38,757 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:38,759 - INFO - [cached since 89.96s ago] ('user1',)
+2025-12-14 19:22:38,762 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:38,764 - INFO - [cached since 42.87s ago] (1, 1)
+2025-12-14 19:22:38,767 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2025-12-14 19:22:38,770 - INFO - [cached since 42.86s ago] ('incomplete', 1)
+2025-12-14 19:22:38,773 - INFO - COMMIT
+2025-12-14 19:22:38,793 - INFO - BEGIN (implicit)
+2025-12-14 19:22:38,795 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:38,797 - INFO - [cached since 58.86s ago] ('user1',)
+2025-12-14 19:22:38,803 - INFO - ROLLBACK
+2025-12-14 19:22:40,172 - INFO - BEGIN (implicit)
+2025-12-14 19:22:40,174 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2025-12-14 19:22:40,176 - INFO - [cached since 91.38s ago] ('user1',)
+2025-12-14 19:22:40,179 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2025-12-14 19:22:40,181 - INFO - [cached since 44.29s ago] (1, 2)
+2025-12-14 19:22:40,187 - INFO - DELETE FROM todolist WHERE todolist.taskid = $1::INTEGER
+2025-12-14 19:22:40,189 - INFO - [generated in 0.00178s] (2,)
+2025-12-14 19:22:40,193 - INFO - COMMIT
+2025-12-14 19:22:40,207 - INFO - BEGIN (implicit)
+2025-12-14 19:22:40,211 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:40,213 - INFO - [cached since 60.27s ago] ('user1',)
+2025-12-14 19:22:40,219 - INFO - ROLLBACK
+2025-12-14 19:22:42,380 - INFO - BEGIN (implicit)
+2025-12-14 19:22:42,398 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:42,408 - INFO - [cached since 62.47s ago] ('user1',)
+2025-12-14 19:22:42,430 - INFO - ROLLBACK
+2025-12-14 19:22:42,457 - INFO - BEGIN (implicit)
+2025-12-14 19:22:42,473 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:42,492 - INFO - [cached since 62.55s ago] ('user1',)
+2025-12-14 19:22:42,509 - INFO - ROLLBACK
+2025-12-14 19:22:42,531 - INFO - BEGIN (implicit)
+2025-12-14 19:22:42,541 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:42,547 - INFO - [cached since 62.61s ago] ('user1',)
+2025-12-14 19:22:42,557 - INFO - ROLLBACK
+2025-12-14 19:22:42,571 - INFO - BEGIN (implicit)
+2025-12-14 19:22:42,581 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:42,587 - INFO - [cached since 62.65s ago] ('user1',)
+2025-12-14 19:22:42,598 - INFO - ROLLBACK
+2025-12-14 19:22:44,935 - INFO - BEGIN (implicit)
+2025-12-14 19:22:44,941 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:44,944 - INFO - [cached since 65s ago] ('user1',)
+2025-12-14 19:22:44,959 - INFO - ROLLBACK
+2025-12-14 19:22:44,971 - INFO - BEGIN (implicit)
+2025-12-14 19:22:44,981 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2025-12-14 19:22:44,988 - INFO - [cached since 65.05s ago] ('user1',)
+2025-12-14 19:22:45,002 - INFO - ROLLBACK
+2026-01-04 07:49:52,669 - INFO - select pg_catalog.version()
+2026-01-04 07:49:52,671 - INFO - [raw sql] ()
+2026-01-04 07:49:52,680 - INFO - select current_schema()
+2026-01-04 07:49:52,682 - INFO - [raw sql] ()
+2026-01-04 07:49:52,689 - INFO - show standard_conforming_strings
+2026-01-04 07:49:52,691 - INFO - [raw sql] ()
+2026-01-04 07:49:52,696 - INFO - BEGIN (implicit)
+2026-01-04 07:49:52,708 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:49:52,710 - INFO - [generated in 0.00216s] ('u1',)
+2026-01-04 07:49:52,731 - INFO - ROLLBACK
+2026-01-04 07:50:05,725 - INFO - BEGIN (implicit)
+2026-01-04 07:50:05,728 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:05,730 - INFO - [cached since 13.02s ago] ('user1',)
+2026-01-04 07:50:06,660 - INFO - ROLLBACK
+2026-01-04 07:50:06,746 - INFO - BEGIN (implicit)
+2026-01-04 07:50:06,757 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:06,762 - INFO - [generated in 0.00547s] ('user1',)
+2026-01-04 07:50:06,788 - INFO - ROLLBACK
+2026-01-04 07:50:06,802 - INFO - BEGIN (implicit)
+2026-01-04 07:50:06,810 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:06,823 - INFO - [cached since 0.06596s ago] ('user1',)
+2026-01-04 07:50:06,837 - INFO - ROLLBACK
+2026-01-04 07:50:06,850 - INFO - BEGIN (implicit)
+2026-01-04 07:50:06,856 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:06,859 - INFO - [cached since 0.1024s ago] ('user1',)
+2026-01-04 07:50:06,874 - INFO - ROLLBACK
+2026-01-04 07:50:06,888 - INFO - BEGIN (implicit)
+2026-01-04 07:50:06,903 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:06,912 - INFO - [cached since 0.155s ago] ('user1',)
+2026-01-04 07:50:06,935 - INFO - ROLLBACK
+2026-01-04 07:50:10,195 - INFO - BEGIN (implicit)
+2026-01-04 07:50:10,198 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:10,201 - INFO - [cached since 17.49s ago] ('user1',)
+2026-01-04 07:50:10,208 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:10,210 - INFO - [generated in 0.00268s] (1, 3)
+2026-01-04 07:50:10,223 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:10,225 - INFO - [generated in 0.00242s] ('complete', 3)
+2026-01-04 07:50:10,234 - INFO - COMMIT
+2026-01-04 07:50:10,253 - INFO - BEGIN (implicit)
+2026-01-04 07:50:10,258 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:10,264 - INFO - [cached since 3.507s ago] ('user1',)
+2026-01-04 07:50:10,273 - INFO - ROLLBACK
+2026-01-04 07:50:11,719 - INFO - BEGIN (implicit)
+2026-01-04 07:50:11,722 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:11,725 - INFO - [cached since 19.02s ago] ('user1',)
+2026-01-04 07:50:11,730 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:11,733 - INFO - [cached since 1.525s ago] (1, 4)
+2026-01-04 07:50:11,737 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:11,739 - INFO - [cached since 1.517s ago] ('incomplete', 4)
+2026-01-04 07:50:11,743 - INFO - COMMIT
+2026-01-04 07:50:11,762 - INFO - BEGIN (implicit)
+2026-01-04 07:50:11,765 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:11,767 - INFO - [cached since 5.01s ago] ('user1',)
+2026-01-04 07:50:11,774 - INFO - ROLLBACK
+2026-01-04 07:50:13,636 - INFO - BEGIN (implicit)
+2026-01-04 07:50:13,643 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:13,651 - INFO - [cached since 20.94s ago] ('user1',)
+2026-01-04 07:50:13,657 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:13,661 - INFO - [cached since 3.454s ago] (1, 1)
+2026-01-04 07:50:13,669 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:13,674 - INFO - [cached since 3.451s ago] ('complete', 1)
+2026-01-04 07:50:13,680 - INFO - COMMIT
+2026-01-04 07:50:13,698 - INFO - BEGIN (implicit)
+2026-01-04 07:50:13,703 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:13,707 - INFO - [cached since 6.95s ago] ('user1',)
+2026-01-04 07:50:13,719 - INFO - ROLLBACK
+2026-01-04 07:50:15,000 - INFO - BEGIN (implicit)
+2026-01-04 07:50:15,002 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:15,004 - INFO - [cached since 22.3s ago] ('user1',)
+2026-01-04 07:50:15,009 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:15,011 - INFO - [cached since 4.804s ago] (1, 3)
+2026-01-04 07:50:15,017 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:15,019 - INFO - [cached since 4.797s ago] ('incomplete', 3)
+2026-01-04 07:50:15,023 - INFO - COMMIT
+2026-01-04 07:50:15,037 - INFO - BEGIN (implicit)
+2026-01-04 07:50:15,040 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:15,042 - INFO - [cached since 8.285s ago] ('user1',)
+2026-01-04 07:50:15,049 - INFO - ROLLBACK
+2026-01-04 07:50:16,157 - INFO - BEGIN (implicit)
+2026-01-04 07:50:16,160 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:16,163 - INFO - [cached since 23.46s ago] ('user1',)
+2026-01-04 07:50:16,169 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:16,172 - INFO - [cached since 5.964s ago] (1, 4)
+2026-01-04 07:50:16,177 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:16,180 - INFO - [cached since 5.958s ago] ('complete', 4)
+2026-01-04 07:50:16,185 - INFO - COMMIT
+2026-01-04 07:50:16,200 - INFO - BEGIN (implicit)
+2026-01-04 07:50:16,204 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:16,207 - INFO - [cached since 9.45s ago] ('user1',)
+2026-01-04 07:50:16,216 - INFO - ROLLBACK
+2026-01-04 07:50:17,447 - INFO - BEGIN (implicit)
+2026-01-04 07:50:17,450 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:17,453 - INFO - [cached since 24.75s ago] ('user1',)
+2026-01-04 07:50:17,459 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:17,461 - INFO - [cached since 7.253s ago] (1, 3)
+2026-01-04 07:50:17,465 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:17,468 - INFO - [cached since 7.245s ago] ('complete', 3)
+2026-01-04 07:50:17,472 - INFO - COMMIT
+2026-01-04 07:50:17,491 - INFO - BEGIN (implicit)
+2026-01-04 07:50:17,495 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:17,498 - INFO - [cached since 10.74s ago] ('user1',)
+2026-01-04 07:50:17,509 - INFO - ROLLBACK
+2026-01-04 07:50:18,513 - INFO - BEGIN (implicit)
+2026-01-04 07:50:18,527 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:18,540 - INFO - [cached since 25.83s ago] ('user1',)
+2026-01-04 07:50:18,554 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:18,562 - INFO - [cached since 8.354s ago] (1, 1)
+2026-01-04 07:50:18,573 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:18,580 - INFO - [cached since 8.358s ago] ('incomplete', 1)
+2026-01-04 07:50:18,590 - INFO - COMMIT
+2026-01-04 07:50:18,612 - INFO - BEGIN (implicit)
+2026-01-04 07:50:18,624 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:18,634 - INFO - [cached since 11.88s ago] ('user1',)
+2026-01-04 07:50:18,654 - INFO - ROLLBACK
+2026-01-04 07:50:20,370 - INFO - BEGIN (implicit)
+2026-01-04 07:50:20,372 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:20,375 - INFO - [cached since 27.67s ago] ('user1',)
+2026-01-04 07:50:20,379 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:20,383 - INFO - [cached since 10.18s ago] (1, 1)
+2026-01-04 07:50:20,392 - INFO - DELETE FROM todolist WHERE todolist.taskid = $1::INTEGER
+2026-01-04 07:50:20,395 - INFO - [generated in 0.00317s] (1,)
+2026-01-04 07:50:20,399 - INFO - COMMIT
+2026-01-04 07:50:20,413 - INFO - BEGIN (implicit)
+2026-01-04 07:50:20,418 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:20,421 - INFO - [cached since 13.66s ago] ('user1',)
+2026-01-04 07:50:20,427 - INFO - ROLLBACK
+2026-01-04 07:50:24,744 - INFO - BEGIN (implicit)
+2026-01-04 07:50:24,747 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:24,749 - INFO - [cached since 32.05s ago] ('user1',)
+2026-01-04 07:50:24,758 - INFO - INSERT INTO todolist (userid, task_name, task_status, user_state) VALUES ($1::INTEGER, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR) RETURNING todolist.taskid
+2026-01-04 07:50:24,760 - INFO - [generated in 0.00278s] (1, 'mimi', 'incomplete', 'login')
+2026-01-04 07:50:24,777 - INFO - COMMIT
+2026-01-04 07:50:24,783 - INFO - BEGIN (implicit)
+2026-01-04 07:50:24,788 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.taskid = $1::INTEGER
+2026-01-04 07:50:24,796 - INFO - [generated in 0.00833s] (5,)
+2026-01-04 07:50:24,803 - INFO - ROLLBACK
+2026-01-04 07:50:24,815 - INFO - BEGIN (implicit)
+2026-01-04 07:50:24,819 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:24,821 - INFO - [cached since 18.08s ago] ('user1',)
+2026-01-04 07:50:24,828 - INFO - ROLLBACK
+2026-01-04 07:50:26,200 - INFO - BEGIN (implicit)
+2026-01-04 07:50:26,203 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:26,205 - INFO - [cached since 33.51s ago] ('user1',)
+2026-01-04 07:50:26,212 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:26,219 - INFO - [cached since 16.02s ago] (1, 5)
+2026-01-04 07:50:26,225 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:26,228 - INFO - [cached since 16.02s ago] ('complete', 5)
+2026-01-04 07:50:26,231 - INFO - COMMIT
+2026-01-04 07:50:26,246 - INFO - BEGIN (implicit)
+2026-01-04 07:50:26,249 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:26,252 - INFO - [cached since 19.51s ago] ('user1',)
+2026-01-04 07:50:26,259 - INFO - ROLLBACK
+2026-01-04 07:50:27,799 - INFO - BEGIN (implicit)
+2026-01-04 07:50:27,802 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:27,806 - INFO - [cached since 35.11s ago] ('user1',)
+2026-01-04 07:50:27,811 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:27,814 - INFO - [cached since 17.62s ago] (1, 4)
+2026-01-04 07:50:27,818 - INFO - UPDATE todolist SET task_status=$1::VARCHAR WHERE todolist.taskid = $2::INTEGER
+2026-01-04 07:50:27,823 - INFO - [cached since 17.61s ago] ('incomplete', 4)
+2026-01-04 07:50:27,827 - INFO - COMMIT
+2026-01-04 07:50:27,842 - INFO - BEGIN (implicit)
+2026-01-04 07:50:27,845 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:27,848 - INFO - [cached since 21.1s ago] ('user1',)
+2026-01-04 07:50:27,855 - INFO - ROLLBACK
+2026-01-04 07:50:29,051 - INFO - BEGIN (implicit)
+2026-01-04 07:50:29,053 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:29,057 - INFO - [cached since 36.36s ago] ('user1',)
+2026-01-04 07:50:29,061 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:29,063 - INFO - [cached since 18.87s ago] (1, 4)
+2026-01-04 07:50:29,069 - INFO - DELETE FROM todolist WHERE todolist.taskid = $1::INTEGER
+2026-01-04 07:50:29,072 - INFO - [cached since 8.692s ago] (4,)
+2026-01-04 07:50:29,076 - INFO - COMMIT
+2026-01-04 07:50:29,089 - INFO - BEGIN (implicit)
+2026-01-04 07:50:29,093 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:29,095 - INFO - [cached since 22.35s ago] ('user1',)
+2026-01-04 07:50:29,101 - INFO - ROLLBACK
+2026-01-04 07:50:30,160 - INFO - BEGIN (implicit)
+2026-01-04 07:50:30,163 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:30,165 - INFO - [cached since 37.47s ago] ('user1',)
+2026-01-04 07:50:30,170 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:30,174 - INFO - [cached since 19.98s ago] (1, 5)
+2026-01-04 07:50:30,182 - INFO - DELETE FROM todolist WHERE todolist.taskid = $1::INTEGER
+2026-01-04 07:50:30,184 - INFO - [cached since 9.804s ago] (5,)
+2026-01-04 07:50:30,190 - INFO - COMMIT
+2026-01-04 07:50:30,204 - INFO - BEGIN (implicit)
+2026-01-04 07:50:30,209 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:30,212 - INFO - [cached since 23.47s ago] ('user1',)
+2026-01-04 07:50:30,218 - INFO - ROLLBACK
+2026-01-04 07:50:31,098 - INFO - BEGIN (implicit)
+2026-01-04 07:50:31,102 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:31,104 - INFO - [cached since 38.41s ago] ('user1',)
+2026-01-04 07:50:31,111 - INFO - SELECT todolist.taskid, todolist.userid, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM todolist 
+WHERE todolist.userid = $1::INTEGER AND todolist.taskid = $2::INTEGER
+2026-01-04 07:50:31,114 - INFO - [cached since 20.92s ago] (1, 3)
+2026-01-04 07:50:31,122 - INFO - DELETE FROM todolist WHERE todolist.taskid = $1::INTEGER
+2026-01-04 07:50:31,125 - INFO - [cached since 10.74s ago] (3,)
+2026-01-04 07:50:31,128 - INFO - COMMIT
+2026-01-04 07:50:31,142 - INFO - BEGIN (implicit)
+2026-01-04 07:50:31,145 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:31,147 - INFO - [cached since 24.4s ago] ('user1',)
+2026-01-04 07:50:31,152 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:31,154 - INFO - [cached since 38.46s ago] ('user1',)
+2026-01-04 07:50:31,158 - INFO - ROLLBACK
+2026-01-04 07:50:45,790 - INFO - BEGIN (implicit)
+2026-01-04 07:50:45,801 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:45,819 - INFO - [cached since 39.07s ago] ('user1',)
+2026-01-04 07:50:45,833 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:45,847 - INFO - [cached since 53.15s ago] ('user1',)
+2026-01-04 07:50:45,857 - INFO - ROLLBACK
+2026-01-04 07:50:45,896 - INFO - BEGIN (implicit)
+2026-01-04 07:50:45,917 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:45,929 - INFO - [cached since 39.18s ago] ('user1',)
+2026-01-04 07:50:45,943 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:45,958 - INFO - [cached since 53.26s ago] ('user1',)
+2026-01-04 07:50:45,976 - INFO - ROLLBACK
+2026-01-04 07:50:46,000 - INFO - BEGIN (implicit)
+2026-01-04 07:50:46,025 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:46,037 - INFO - [cached since 39.29s ago] ('user1',)
+2026-01-04 07:50:46,064 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:46,081 - INFO - [cached since 53.38s ago] ('user1',)
+2026-01-04 07:50:46,101 - INFO - ROLLBACK
+2026-01-04 07:50:46,136 - INFO - BEGIN (implicit)
+2026-01-04 07:50:46,151 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:46,160 - INFO - [cached since 39.41s ago] ('user1',)
+2026-01-04 07:50:46,169 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:46,175 - INFO - [cached since 53.48s ago] ('user1',)
+2026-01-04 07:50:46,182 - INFO - ROLLBACK
+2026-01-04 07:50:47,109 - INFO - BEGIN (implicit)
+2026-01-04 07:50:47,122 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:47,128 - INFO - [cached since 40.38s ago] ('user1',)
+2026-01-04 07:50:47,136 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:47,145 - INFO - [cached since 54.45s ago] ('user1',)
+2026-01-04 07:50:47,154 - INFO - ROLLBACK
+2026-01-04 07:50:47,167 - INFO - BEGIN (implicit)
+2026-01-04 07:50:47,174 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:47,183 - INFO - [cached since 40.44s ago] ('user1',)
+2026-01-04 07:50:47,190 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:47,194 - INFO - [cached since 54.5s ago] ('user1',)
+2026-01-04 07:50:47,202 - INFO - ROLLBACK
+2026-01-04 07:50:47,217 - INFO - BEGIN (implicit)
+2026-01-04 07:50:47,222 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:47,230 - INFO - [cached since 40.48s ago] ('user1',)
+2026-01-04 07:50:47,243 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:47,254 - INFO - [cached since 54.56s ago] ('user1',)
+2026-01-04 07:50:47,259 - INFO - ROLLBACK
+2026-01-04 07:50:47,273 - INFO - BEGIN (implicit)
+2026-01-04 07:50:47,287 - INFO - SELECT users.userid, users.username, users.hashed_pwd, todolist.taskid, todolist.userid AS userid_1, todolist.task_name, todolist.task_status, todolist.user_state 
+FROM users JOIN todolist ON users.userid = todolist.userid 
+WHERE users.username = $1::VARCHAR ORDER BY todolist.taskid
+2026-01-04 07:50:47,291 - INFO - [cached since 40.55s ago] ('user1',)
+2026-01-04 07:50:47,298 - INFO - SELECT users.userid, users.username, users.hashed_pwd 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2026-01-04 07:50:47,309 - INFO - [cached since 54.61s ago] ('user1',)
+2026-01-04 07:50:47,313 - INFO - ROLLBACK

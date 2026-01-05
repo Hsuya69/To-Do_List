@@ -1,0 +1,23 @@
+
+.info button{
+    font-family: Impact;
+    font: 49px;
+    background: #9e61bd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.3s ease;
+    padding: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+
+.info p{
+    font-family: impact;
+    font-size: 45px;
+    color: rgb(218, 179, 255);
+    justify-content: center;
+}

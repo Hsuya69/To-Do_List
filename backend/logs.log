@@ -1,0 +1,402 @@
+2025-11-01 15:34:10,323-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJraWt1IiwiZXhwIjoxNzYxOTkzMjUwfQ.Kc33Ntqsq9PO9t89uUslLVtC-7r_757KjRo9oIewXb4
+2025-11-01 15:34:10,457-INFO-status:200 , /user ,user_id:10,name:kiku
+2025-11-01 15:34:10,494-INFO-status:200 , /user ,user_id:10,name:kiku
+2025-11-01 15:34:10,519-INFO-status:200 , /user ,user_id:10,name:kiku
+2025-11-01 15:34:10,537-INFO-status:200 , /user ,user_id:10,name:kiku
+2025-11-01 15:34:20,274-INFO-status:200 , user id:10 task id:36 deleted
+2025-11-01 15:34:20,337-INFO-status:200 , /user ,user_id:10,name:kiku
+2025-11-02 15:48:45,356-CRITICAL-import error:No module named 'Auth_folder'
+2025-11-02 15:52:51,391-delete.py:9 - <module>()-CRITICAL-import error:No module named 'Auth_folder'
+2025-12-14 20:40:55,508-config.py:321 - __init__()-INFO-Will watch for changes in these directories: ['C:\\Users\\ayush sinha\\Desktop\\coding\\peerowjayektasss\\To do list\\backend']
+2025-12-14 20:40:55,543-config.py:542 - bind_socket()-INFO-Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2025-12-14 20:40:55,552-basereload.py:80 - startup()-INFO-Started reloader process [4300] using WatchFiles
+2025-12-14 20:41:00,409-server.py:84 - _serve()-INFO-Started server process [21876]
+2025-12-14 20:41:00,412-on.py:48 - startup()-INFO-Waiting for application startup.
+2025-12-14 20:41:00,416-on.py:62 - startup()-INFO-Application startup complete.
+2025-12-14 20:44:57,624-httptools_impl.py:414 - run_asgi()-ERROR-Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\applications.py", line 1082, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 308, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 219, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\routes\users.py", line 23, in signup
+    result = await db.execute(select(User).filter(User.username==userdata.username))
+                              ~~~~~~^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\_selectable_constructors.py", line 537, in select
+    return Select(*entities)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\selectable.py", line 5376, in __init__
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole, ent, apply_propagate_attrs=self
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 634, in _literal_coercion
+    self._raise_for_expected(element, argname)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 1132, in _raise_for_expected
+    return super()._raise_for_expected(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        element, argname=argname, resolved=resolved, advice=advice, **kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 695, in _raise_for_expected
+    super()._raise_for_expected(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        element,
+        ^^^^^^^^
+    ...<5 lines>...
+        **kw,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: Column expression, FROM clause, or other columns clause element expected, got <class 'App.Auth_folder.Auth.User'>.
+2025-12-14 20:50:57,557-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 20:50:57,633-basereload.py:55 - run()-WARNING-WatchFiles detected changes in 'App\routes\users.py'. Reloading...
+2025-12-14 20:50:57,732-server.py:264 - shutdown()-INFO-Shutting down
+2025-12-14 20:50:57,868-on.py:67 - shutdown()-INFO-Waiting for application shutdown.
+2025-12-14 20:50:57,878-on.py:76 - shutdown()-INFO-Application shutdown complete.
+2025-12-14 20:50:57,885-server.py:94 - _serve()-INFO-Finished server process [21876]
+2025-12-14 20:50:59,606-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 20:51:04,932-main.py:308 - _log_changes()-INFO-5 changes detected
+2025-12-14 20:51:07,222-server.py:84 - _serve()-INFO-Started server process [19072]
+2025-12-14 20:51:07,226-on.py:48 - startup()-INFO-Waiting for application startup.
+2025-12-14 20:51:07,229-on.py:62 - startup()-INFO-Application startup complete.
+2025-12-14 20:51:16,614-users.py:36 - signup()-INFO-added user with userid:User.userid
+2025-12-14 20:51:16,615-users.py:41 - signup()-INFO-status:200 ,account created successfully
+2025-12-14 20:52:03,840-users.py:28 - signup()-WARNING-status:400, username already exists
+2025-12-14 20:52:26,902-httptools_impl.py:414 - run_asgi()-ERROR-Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\applications.py", line 1082, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 308, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 219, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\routes\users.py", line 49, in login
+    user=await authenticate(db,userdata.username,userdata.password)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\Auth_folder\Auth.py", line 49, in authenticate
+    user= await get_user(username,db)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\Auth_folder\Auth.py", line 41, in get_user
+    result = await db.execute(select(User).filter(User.username==username))
+                              ~~~~~~^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\_selectable_constructors.py", line 537, in select
+    return Select(*entities)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\selectable.py", line 5376, in __init__
+    coercions.expect(
+    ~~~~~~~~~~~~~~~~^
+        roles.ColumnsClauseRole, ent, apply_propagate_attrs=self
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 634, in _literal_coercion
+    self._raise_for_expected(element, argname)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 1132, in _raise_for_expected
+    return super()._raise_for_expected(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        element, argname=argname, resolved=resolved, advice=advice, **kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 695, in _raise_for_expected
+    super()._raise_for_expected(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        element,
+        ^^^^^^^^
+    ...<5 lines>...
+        **kw,
+        ^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\sql\coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: Column expression, FROM clause, or other columns clause element expected, got <class 'App.Auth_folder.Auth.User'>.
+2025-12-14 20:58:41,245-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 20:58:41,262-basereload.py:55 - run()-WARNING-WatchFiles detected changes in 'App\Auth_folder\Auth.py'. Reloading...
+2025-12-14 20:58:41,352-server.py:264 - shutdown()-INFO-Shutting down
+2025-12-14 20:58:41,459-on.py:67 - shutdown()-INFO-Waiting for application shutdown.
+2025-12-14 20:58:41,461-on.py:76 - shutdown()-INFO-Application shutdown complete.
+2025-12-14 20:58:41,464-server.py:94 - _serve()-INFO-Finished server process [19072]
+2025-12-14 20:58:42,517-main.py:308 - _log_changes()-INFO-2 changes detected
+2025-12-14 20:58:46,980-main.py:308 - _log_changes()-INFO-5 changes detected
+2025-12-14 20:58:47,321-server.py:84 - _serve()-INFO-Started server process [16940]
+2025-12-14 20:58:47,325-on.py:48 - startup()-INFO-Waiting for application startup.
+2025-12-14 20:58:47,328-on.py:62 - startup()-INFO-Application startup complete.
+2025-12-14 21:05:37,888-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 21:05:37,891-basereload.py:55 - run()-WARNING-WatchFiles detected changes in 'App\Auth_folder\Auth.py'. Reloading...
+2025-12-14 21:05:37,972-server.py:264 - shutdown()-INFO-Shutting down
+2025-12-14 21:05:38,081-on.py:67 - shutdown()-INFO-Waiting for application shutdown.
+2025-12-14 21:05:38,087-on.py:76 - shutdown()-INFO-Application shutdown complete.
+2025-12-14 21:05:38,097-server.py:94 - _serve()-INFO-Finished server process [16940]
+2025-12-14 21:05:39,182-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 21:05:43,509-main.py:308 - _log_changes()-INFO-5 changes detected
+2025-12-14 21:05:43,826-server.py:84 - _serve()-INFO-Started server process [9688]
+2025-12-14 21:05:43,841-on.py:48 - startup()-INFO-Waiting for application startup.
+2025-12-14 21:05:43,844-on.py:62 - startup()-INFO-Application startup complete.
+2025-12-14 21:06:32,517-users.py:62 - login()-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyMSIsImV4cCI6MTc2NTcyODM5Mn0.NwNh8bmI-3J2ezw4wLgwBwGTkn3tTtzeaf_WYZ9C1EU
+2025-12-14 21:06:42,247-users.py:62 - login()-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyMSIsImV4cCI6MTc2NTcyODQwMn0.j6SOG9QEDafxgrL3KoTUxJV12ajwK1uW0cWqHveWwUY
+2025-12-14 21:06:51,608-httptools_impl.py:414 - run_asgi()-ERROR-Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\applications.py", line 1082, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 308, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\fastapi\routing.py", line 219, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\backend\App\routes\insert.py", line 27, in addtask
+    task=Todolist(task_name=task_name,User=User,task_status="incomplete")
+  File "<string>", line 4, in __init__
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\orm\state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ayush sinha\Desktop\coding\peerowjayektasss\To do list\venv\Lib\site-packages\sqlalchemy\orm\decl_base.py", line 2179, in _declarative_constructor
+    raise TypeError(
+        "%r is an invalid keyword argument for %s" % (k, cls_.__name__)
+    )
+TypeError: 'User' is an invalid keyword argument for Todolist
+2025-12-14 21:17:37,569-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 21:17:37,693-basereload.py:55 - run()-WARNING-WatchFiles detected changes in 'App\routes\insert.py'. Reloading...
+2025-12-14 21:17:37,896-server.py:264 - shutdown()-INFO-Shutting down
+2025-12-14 21:17:38,117-on.py:67 - shutdown()-INFO-Waiting for application shutdown.
+2025-12-14 21:17:38,128-on.py:76 - shutdown()-INFO-Application shutdown complete.
+2025-12-14 21:17:38,132-server.py:94 - _serve()-INFO-Finished server process [9688]
+2025-12-14 21:17:39,869-main.py:308 - _log_changes()-INFO-2 changes detected
+2025-12-14 21:17:48,774-main.py:308 - _log_changes()-INFO-5 changes detected
+2025-12-14 21:17:48,735-server.py:84 - _serve()-INFO-Started server process [18728]
+2025-12-14 21:17:49,023-on.py:48 - startup()-INFO-Waiting for application startup.
+2025-12-14 21:17:49,044-on.py:62 - startup()-INFO-Application startup complete.
+2025-12-14 21:18:21,848-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:1
+2025-12-14 21:18:21,924-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:25,646-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:28,736-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:30,544-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:1 deleted
+2025-12-14 21:18:35,145-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:2
+2025-12-14 21:18:35,191-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:40,268-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:3
+2025-12-14 21:18:40,347-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:45,693-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:4
+2025-12-14 21:18:45,744-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:47,590-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:48,905-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:50,310-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:3 deleted
+2025-12-14 21:18:50,362-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:51,139-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:2 deleted
+2025-12-14 21:18:51,195-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:User1
+2025-12-14 21:18:51,790-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:4 deleted
+2025-12-14 21:57:53,990-users.py:62 - login()-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VyMSIsImV4cCI6MTc2NTczMTQ3M30.ZEPSKKwg329nmXD-Tsb6PW_JlDRJQ0d7YrceLGYW02A
+2025-12-14 21:58:13,725-users.py:51 - login()-ERROR-status:400 , incorrect username or password
+2025-12-14 22:02:00,024-main.py:308 - _log_changes()-INFO-1 change detected
+2025-12-14 22:02:08,065-server.py:264 - shutdown()-INFO-Shutting down
+2025-12-14 22:02:08,192-on.py:67 - shutdown()-INFO-Waiting for application shutdown.
+2025-12-14 22:02:08,200-on.py:76 - shutdown()-INFO-Application shutdown complete.
+2025-12-14 22:02:08,206-server.py:94 - _serve()-INFO-Finished server process [18728]
+2025-12-14 22:02:08,911-basereload.py:116 - shutdown()-INFO-Stopping reloader process [4300]
+2025-12-14 19:21:08,962-users.py:51 - login()-ERROR-status:400 , incorrect username or password
+2025-12-14 19:21:26,358-users.py:36 - signup()-INFO-added user with userid:User.userid
+2025-12-14 19:21:26,374-users.py:41 - signup()-INFO-status:200 ,account created successfully
+2025-12-14 19:21:39,819-users.py:62 - login()-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTc2NTc0MTg5OX0.0eXZhE6YlzmpVlnXZvQpkiuVgQ0xnRP2d5p5EHVg3ag
+2025-12-14 19:21:53,782-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:1
+2025-12-14 19:21:54,254-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:21:56,062-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:01,956-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:2
+2025-12-14 19:22:02,045-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:19,279-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:3
+2025-12-14 19:22:19,319-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:20,875-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:33,868-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:4
+2025-12-14 19:22:33,915-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:35,541-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:36,675-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:37,717-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:38,800-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:40,184-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:2 deleted
+2025-12-14 19:22:40,216-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:42,420-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:42,502-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:42,552-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:42,593-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:44,952-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2025-12-14 19:22:44,997-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:49:52,727-users.py:51 - login()-ERROR-status:400 , incorrect username or password
+2026-01-04 07:50:06,655-users.py:62 - login()-INFO-cookie created: tokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImV4cCI6MTc2NzUxNDgwNn0.E7SZFWiljq1Vy2nvjftVklkKZGuPj6-STR_Qco12bLg
+2026-01-04 07:50:06,782-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:06,830-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:06,869-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:06,925-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:10,270-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:11,772-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:13,715-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:15,046-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:16,212-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:17,503-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:18,644-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:20,387-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:1 deleted
+2026-01-04 07:50:20,424-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:24,801-insert.py:31 - addtask()-INFO-task added succesfully userid:1 task_id:5
+2026-01-04 07:50:24,825-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:26,256-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:27,852-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:29,066-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:4 deleted
+2026-01-04 07:50:29,098-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:30,178-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:5 deleted
+2026-01-04 07:50:30,216-update.py:88 - show_tasks()-INFO-status:200 , /user ,user_id:1,name:user1
+2026-01-04 07:50:31,118-delete.py:49 - deletetask()-INFO-status:200 , user id:1 task id:3 deleted

@@ -1,0 +1,926 @@
+2025-11-02 17:38:03,966 - INFO - select pg_catalog.version()
+2025-11-02 17:38:03,968 - INFO - [raw sql] ()
+2025-11-02 17:38:03,979 - INFO - select current_schema()
+2025-11-02 17:38:03,980 - INFO - [raw sql] ()
+2025-11-02 17:38:03,986 - INFO - show standard_conforming_strings
+2025-11-02 17:38:03,987 - INFO - [raw sql] ()
+2025-11-02 17:38:03,993 - INFO - BEGIN (implicit)
+2025-11-02 17:38:04,004 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:38:04,005 - INFO - [generated in 0.00181s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:38:04,035 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:38:04,035 - INFO - [cached since 0.03185s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:38:04,038 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:38:04,039 - INFO - [cached since 0.03532s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:38:04,041 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:38:04,042 - INFO - [cached since 0.03834s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:38:04,044 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 17:38:04,044 - INFO - [no key 0.00043s] ()
+2025-11-02 17:38:04,106 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 17:38:04,106 - INFO - [no key 0.00062s] ()
+2025-11-02 17:38:04,129 - INFO - COMMIT
+2025-11-02 17:38:04,141 - INFO - BEGIN (implicit)
+2025-11-02 17:38:04,150 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 17:38:04,151 - INFO - [generated in 0.00089s] ('kiku',)
+2025-11-02 17:38:05,648 - INFO - ROLLBACK
+2025-11-02 17:45:19,895 - INFO - select pg_catalog.version()
+2025-11-02 17:45:19,896 - INFO - [raw sql] ()
+2025-11-02 17:45:19,901 - INFO - select current_schema()
+2025-11-02 17:45:19,902 - INFO - [raw sql] ()
+2025-11-02 17:45:19,905 - INFO - show standard_conforming_strings
+2025-11-02 17:45:19,905 - INFO - [raw sql] ()
+2025-11-02 17:45:19,908 - INFO - BEGIN (implicit)
+2025-11-02 17:45:19,915 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:19,924 - INFO - [generated in 0.00910s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:19,941 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:19,942 - INFO - [cached since 0.02699s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:19,944 - INFO - 
+DROP TABLE todolist
+2025-11-02 17:45:19,944 - INFO - [no key 0.00043s] ()
+2025-11-02 17:45:19,957 - INFO - 
+DROP TABLE "user"
+2025-11-02 17:45:19,957 - INFO - [no key 0.00088s] ()
+2025-11-02 17:45:19,962 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:19,963 - INFO - [cached since 0.0481s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:19,965 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:19,966 - INFO - [cached since 0.05139s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:19,969 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 17:45:19,969 - INFO - [no key 0.00053s] ()
+2025-11-02 17:45:20,003 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 17:45:20,004 - INFO - [no key 0.00069s] ()
+2025-11-02 17:45:20,020 - INFO - COMMIT
+2025-11-02 17:45:20,044 - INFO - BEGIN (implicit)
+2025-11-02 17:45:20,055 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 17:45:20,055 - INFO - [generated in 0.00081s] ('kiku',)
+2025-11-02 17:45:21,459 - INFO - ROLLBACK
+2025-11-02 17:45:47,532 - INFO - select pg_catalog.version()
+2025-11-02 17:45:47,534 - INFO - [raw sql] ()
+2025-11-02 17:45:47,540 - INFO - select current_schema()
+2025-11-02 17:45:47,541 - INFO - [raw sql] ()
+2025-11-02 17:45:47,546 - INFO - show standard_conforming_strings
+2025-11-02 17:45:47,547 - INFO - [raw sql] ()
+2025-11-02 17:45:47,551 - INFO - BEGIN (implicit)
+2025-11-02 17:45:47,562 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:47,564 - INFO - [generated in 0.00270s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:47,588 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:47,589 - INFO - [cached since 0.02744s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:47,593 - INFO - 
+DROP TABLE todolist
+2025-11-02 17:45:47,593 - INFO - [no key 0.00051s] ()
+2025-11-02 17:45:47,604 - INFO - 
+DROP TABLE "user"
+2025-11-02 17:45:47,605 - INFO - [no key 0.00062s] ()
+2025-11-02 17:45:47,610 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:47,611 - INFO - [cached since 0.04907s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:47,617 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:45:47,618 - INFO - [cached since 0.0563s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:45:47,622 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 17:45:47,623 - INFO - [no key 0.00074s] ()
+2025-11-02 17:45:47,667 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 17:45:47,668 - INFO - [no key 0.00061s] ()
+2025-11-02 17:45:47,688 - INFO - COMMIT
+2025-11-02 17:45:47,717 - INFO - BEGIN (implicit)
+2025-11-02 17:45:47,731 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 17:45:47,732 - INFO - [generated in 0.00071s] ('kiku',)
+2025-11-02 17:45:49,044 - INFO - ROLLBACK
+2025-11-02 17:56:34,837 - INFO - select pg_catalog.version()
+2025-11-02 17:56:34,839 - INFO - [raw sql] ()
+2025-11-02 17:56:34,852 - INFO - select current_schema()
+2025-11-02 17:56:34,853 - INFO - [raw sql] ()
+2025-11-02 17:56:34,859 - INFO - show standard_conforming_strings
+2025-11-02 17:56:34,860 - INFO - [raw sql] ()
+2025-11-02 17:56:34,865 - INFO - BEGIN (implicit)
+2025-11-02 17:56:34,873 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:56:34,875 - INFO - [generated in 0.00196s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:56:34,908 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:56:34,909 - INFO - [cached since 0.03635s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:56:34,913 - INFO - 
+DROP TABLE todolist
+2025-11-02 17:56:34,914 - INFO - [no key 0.00063s] ()
+2025-11-02 17:56:34,933 - INFO - 
+DROP TABLE "user"
+2025-11-02 17:56:34,934 - INFO - [no key 0.00066s] ()
+2025-11-02 17:56:34,940 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:56:34,940 - INFO - [cached since 0.06738s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:56:34,945 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 17:56:34,945 - INFO - [cached since 0.07222s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 17:56:34,949 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 17:56:34,950 - INFO - [no key 0.00074s] ()
+2025-11-02 17:56:35,010 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 17:56:35,010 - INFO - [no key 0.00070s] ()
+2025-11-02 17:56:35,030 - INFO - COMMIT
+2025-11-02 17:56:35,058 - INFO - BEGIN (implicit)
+2025-11-02 17:56:35,071 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 17:56:35,072 - INFO - [generated in 0.00078s] ('kiku',)
+2025-11-02 17:56:35,086 - INFO - ROLLBACK
+2025-11-02 23:29:31,187 - INFO - select pg_catalog.version()
+2025-11-02 23:29:31,189 - INFO - [raw sql] ()
+2025-11-02 23:29:31,195 - INFO - select current_schema()
+2025-11-02 23:29:31,196 - INFO - [raw sql] ()
+2025-11-02 23:29:31,204 - INFO - show standard_conforming_strings
+2025-11-02 23:29:31,207 - INFO - [raw sql] ()
+2025-11-02 23:29:31,214 - INFO - BEGIN (implicit)
+2025-11-02 23:29:31,236 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:29:31,245 - INFO - [generated in 0.00989s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:29:31,274 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:29:31,279 - INFO - [cached since 0.04302s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:29:31,282 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:29:31,283 - INFO - [no key 0.00080s] ()
+2025-11-02 23:29:31,302 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:29:31,303 - INFO - [no key 0.00053s] ()
+2025-11-02 23:29:31,309 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:29:31,313 - INFO - [cached since 0.07714s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:29:31,318 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:29:31,319 - INFO - [cached since 0.08348s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:29:31,323 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:29:31,328 - INFO - [no key 0.00552s] ()
+2025-11-02 23:29:31,372 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:29:31,376 - INFO - [no key 0.00365s] ()
+2025-11-02 23:29:31,388 - INFO - COMMIT
+2025-11-02 23:30:11,949 - INFO - select pg_catalog.version()
+2025-11-02 23:30:11,949 - INFO - [raw sql] ()
+2025-11-02 23:30:11,953 - INFO - select current_schema()
+2025-11-02 23:30:11,953 - INFO - [raw sql] ()
+2025-11-02 23:30:11,956 - INFO - show standard_conforming_strings
+2025-11-02 23:30:11,957 - INFO - [raw sql] ()
+2025-11-02 23:30:11,961 - INFO - BEGIN (implicit)
+2025-11-02 23:30:11,967 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:30:11,974 - INFO - [generated in 0.00644s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:30:11,989 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:30:11,990 - INFO - [cached since 0.02263s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:30:11,993 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:30:11,997 - INFO - [no key 0.00375s] ()
+2025-11-02 23:30:12,004 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:30:12,004 - INFO - [no key 0.00073s] ()
+2025-11-02 23:30:12,008 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:30:12,012 - INFO - [cached since 0.04505s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:30:12,017 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:30:12,017 - INFO - [cached since 0.05026s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:30:12,020 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:30:12,021 - INFO - [no key 0.00063s] ()
+2025-11-02 23:30:12,049 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:30:12,050 - INFO - [no key 0.00076s] ()
+2025-11-02 23:30:12,063 - INFO - COMMIT
+2025-11-02 23:32:16,044 - INFO - select pg_catalog.version()
+2025-11-02 23:32:16,045 - INFO - [raw sql] ()
+2025-11-02 23:32:16,048 - INFO - select current_schema()
+2025-11-02 23:32:16,048 - INFO - [raw sql] ()
+2025-11-02 23:32:16,052 - INFO - show standard_conforming_strings
+2025-11-02 23:32:16,052 - INFO - [raw sql] ()
+2025-11-02 23:32:16,056 - INFO - BEGIN (implicit)
+2025-11-02 23:32:16,067 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:16,067 - INFO - [generated in 0.00099s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:16,090 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:16,095 - INFO - [cached since 0.02869s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:16,098 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:32:16,099 - INFO - [no key 0.00078s] ()
+2025-11-02 23:32:16,110 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:32:16,111 - INFO - [no key 0.00142s] ()
+2025-11-02 23:32:16,115 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:16,116 - INFO - [cached since 0.04952s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:16,120 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:16,122 - INFO - [cached since 0.05591s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:16,128 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:32:16,129 - INFO - [no key 0.00094s] ()
+2025-11-02 23:32:16,163 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:32:16,164 - INFO - [no key 0.00162s] ()
+2025-11-02 23:32:16,179 - INFO - COMMIT
+2025-11-02 23:32:16,339 - INFO - select pg_catalog.version()
+2025-11-02 23:32:16,340 - INFO - [raw sql] ()
+2025-11-02 23:32:16,342 - INFO - select current_schema()
+2025-11-02 23:32:16,343 - INFO - [raw sql] ()
+2025-11-02 23:32:16,345 - INFO - show standard_conforming_strings
+2025-11-02 23:32:16,346 - INFO - [raw sql] ()
+2025-11-02 23:32:16,348 - INFO - BEGIN (implicit)
+2025-11-02 23:32:16,361 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:32:16,363 - INFO - [generated in 0.00177s] ('test_user',)
+2025-11-02 23:32:16,946 - INFO - INSERT INTO "user" (username, hashed_pwd) VALUES ($1::VARCHAR, $2::VARCHAR) RETURNING "user".userid
+2025-11-02 23:32:16,947 - INFO - [generated in 0.00063s] ('test_user', '$2b$12$HISZBGK3yuuoSRn8VT3rJOgyaCITVdQFssL6EhGQwuUr3q61e9Sgy')
+2025-11-02 23:32:16,964 - INFO - COMMIT
+2025-11-02 23:32:16,969 - INFO - BEGIN (implicit)
+2025-11-02 23:32:16,975 - INFO - SELECT "user".userid AS user_userid, "user".username AS user_username, "user".hashed_pwd AS user_hashed_pwd 
+FROM "user" 
+WHERE "user".userid = $1::INTEGER
+2025-11-02 23:32:16,975 - INFO - [generated in 0.00066s] (11,)
+2025-11-02 23:32:16,977 - INFO - ROLLBACK
+2025-11-02 23:32:17,360 - INFO - BEGIN (implicit)
+2025-11-02 23:32:17,362 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:32:17,362 - INFO - [cached since 1.001s ago] ('test_user',)
+2025-11-02 23:32:17,366 - INFO - ROLLBACK
+2025-11-02 23:32:41,055 - INFO - select pg_catalog.version()
+2025-11-02 23:32:41,056 - INFO - [raw sql] ()
+2025-11-02 23:32:41,059 - INFO - select current_schema()
+2025-11-02 23:32:41,060 - INFO - [raw sql] ()
+2025-11-02 23:32:41,062 - INFO - show standard_conforming_strings
+2025-11-02 23:32:41,062 - INFO - [raw sql] ()
+2025-11-02 23:32:41,065 - INFO - BEGIN (implicit)
+2025-11-02 23:32:41,075 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:41,076 - INFO - [generated in 0.00082s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:41,097 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:41,098 - INFO - [cached since 0.02284s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:41,100 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:32:41,102 - INFO - [no key 0.00189s] ()
+2025-11-02 23:32:41,113 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:32:41,113 - INFO - [no key 0.00056s] ()
+2025-11-02 23:32:41,117 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:41,118 - INFO - [cached since 0.04297s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:41,124 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:32:41,126 - INFO - [cached since 0.05123s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:32:41,132 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:32:41,133 - INFO - [no key 0.00067s] ()
+2025-11-02 23:32:41,166 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:32:41,166 - INFO - [no key 0.00068s] ()
+2025-11-02 23:32:41,182 - INFO - COMMIT
+2025-11-02 23:32:41,365 - INFO - select pg_catalog.version()
+2025-11-02 23:32:41,365 - INFO - [raw sql] ()
+2025-11-02 23:32:41,369 - INFO - select current_schema()
+2025-11-02 23:32:41,369 - INFO - [raw sql] ()
+2025-11-02 23:32:41,373 - INFO - show standard_conforming_strings
+2025-11-02 23:32:41,375 - INFO - [raw sql] ()
+2025-11-02 23:32:41,378 - INFO - BEGIN (implicit)
+2025-11-02 23:32:41,395 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:32:41,399 - INFO - [generated in 0.00420s] ('test_user',)
+2025-11-02 23:32:41,417 - INFO - ROLLBACK
+2025-11-02 23:32:41,840 - INFO - BEGIN (implicit)
+2025-11-02 23:32:41,841 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:32:41,843 - INFO - [cached since 0.4475s ago] ('test_user',)
+2025-11-02 23:32:41,847 - INFO - ROLLBACK
+2025-11-02 23:33:02,864 - INFO - select pg_catalog.version()
+2025-11-02 23:33:02,865 - INFO - [raw sql] ()
+2025-11-02 23:33:02,869 - INFO - select current_schema()
+2025-11-02 23:33:02,869 - INFO - [raw sql] ()
+2025-11-02 23:33:02,873 - INFO - show standard_conforming_strings
+2025-11-02 23:33:02,880 - INFO - [raw sql] ()
+2025-11-02 23:33:02,891 - INFO - BEGIN (implicit)
+2025-11-02 23:33:02,905 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:02,909 - INFO - [generated in 0.00446s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:02,923 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:02,929 - INFO - [cached since 0.02397s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:02,933 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:33:02,934 - INFO - [no key 0.00058s] ()
+2025-11-02 23:33:02,942 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:33:02,943 - INFO - [no key 0.00074s] ()
+2025-11-02 23:33:02,947 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:02,948 - INFO - [cached since 0.04307s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:02,952 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:02,954 - INFO - [cached since 0.04889s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:02,957 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:33:02,958 - INFO - [no key 0.00092s] ()
+2025-11-02 23:33:02,990 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:33:02,999 - INFO - [no key 0.00900s] ()
+2025-11-02 23:33:03,013 - INFO - COMMIT
+2025-11-02 23:33:03,212 - INFO - select pg_catalog.version()
+2025-11-02 23:33:03,212 - INFO - [raw sql] ()
+2025-11-02 23:33:03,215 - INFO - select current_schema()
+2025-11-02 23:33:03,216 - INFO - [raw sql] ()
+2025-11-02 23:33:03,219 - INFO - show standard_conforming_strings
+2025-11-02 23:33:03,219 - INFO - [raw sql] ()
+2025-11-02 23:33:03,222 - INFO - BEGIN (implicit)
+2025-11-02 23:33:03,235 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:33:03,237 - INFO - [generated in 0.00216s] ('test_user',)
+2025-11-02 23:33:03,248 - INFO - ROLLBACK
+2025-11-02 23:33:03,608 - INFO - BEGIN (implicit)
+2025-11-02 23:33:03,609 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:33:03,610 - INFO - [cached since 0.3755s ago] ('test_user',)
+2025-11-02 23:33:03,615 - INFO - ROLLBACK
+2025-11-02 23:33:54,179 - INFO - select pg_catalog.version()
+2025-11-02 23:33:54,179 - INFO - [raw sql] ()
+2025-11-02 23:33:54,182 - INFO - select current_schema()
+2025-11-02 23:33:54,183 - INFO - [raw sql] ()
+2025-11-02 23:33:54,185 - INFO - show standard_conforming_strings
+2025-11-02 23:33:54,185 - INFO - [raw sql] ()
+2025-11-02 23:33:54,188 - INFO - BEGIN (implicit)
+2025-11-02 23:33:54,196 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:54,197 - INFO - [generated in 0.00104s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:54,218 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:54,219 - INFO - [cached since 0.02348s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:54,222 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:33:54,222 - INFO - [no key 0.00058s] ()
+2025-11-02 23:33:54,231 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:33:54,232 - INFO - [no key 0.00179s] ()
+2025-11-02 23:33:54,236 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:54,236 - INFO - [cached since 0.04044s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:54,239 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:33:54,240 - INFO - [cached since 0.04385s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:33:54,243 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:33:54,246 - INFO - [no key 0.00292s] ()
+2025-11-02 23:33:54,274 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:33:54,279 - INFO - [no key 0.00482s] ()
+2025-11-02 23:33:54,291 - INFO - COMMIT
+2025-11-02 23:33:54,468 - INFO - select pg_catalog.version()
+2025-11-02 23:33:54,470 - INFO - [raw sql] ()
+2025-11-02 23:33:54,473 - INFO - select current_schema()
+2025-11-02 23:33:54,473 - INFO - [raw sql] ()
+2025-11-02 23:33:54,477 - INFO - show standard_conforming_strings
+2025-11-02 23:33:54,479 - INFO - [raw sql] ()
+2025-11-02 23:33:54,482 - INFO - BEGIN (implicit)
+2025-11-02 23:33:54,499 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:33:54,500 - INFO - [generated in 0.00086s] ('test_user',)
+2025-11-02 23:33:54,511 - INFO - ROLLBACK
+2025-11-02 23:33:54,893 - INFO - BEGIN (implicit)
+2025-11-02 23:33:54,894 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:33:54,895 - INFO - [cached since 0.3958s ago] ('test_user',)
+2025-11-02 23:33:54,900 - INFO - ROLLBACK
+2025-11-02 23:36:14,108 - INFO - select pg_catalog.version()
+2025-11-02 23:36:14,109 - INFO - [raw sql] ()
+2025-11-02 23:36:14,113 - INFO - select current_schema()
+2025-11-02 23:36:14,113 - INFO - [raw sql] ()
+2025-11-02 23:36:14,116 - INFO - show standard_conforming_strings
+2025-11-02 23:36:14,117 - INFO - [raw sql] ()
+2025-11-02 23:36:14,121 - INFO - BEGIN (implicit)
+2025-11-02 23:36:14,129 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:36:14,130 - INFO - [generated in 0.00088s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:36:14,151 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:36:14,152 - INFO - [cached since 0.02252s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:36:14,156 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:36:14,157 - INFO - [no key 0.00056s] ()
+2025-11-02 23:36:14,166 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:36:14,167 - INFO - [no key 0.00084s] ()
+2025-11-02 23:36:14,171 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:36:14,172 - INFO - [cached since 0.04339s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:36:14,176 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:36:14,177 - INFO - [cached since 0.04783s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:36:14,181 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:36:14,184 - INFO - [no key 0.00341s] ()
+2025-11-02 23:36:14,213 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:36:14,215 - INFO - [no key 0.00190s] ()
+2025-11-02 23:36:14,231 - INFO - COMMIT
+2025-11-02 23:36:14,404 - INFO - select pg_catalog.version()
+2025-11-02 23:36:14,404 - INFO - [raw sql] ()
+2025-11-02 23:36:14,406 - INFO - select current_schema()
+2025-11-02 23:36:14,406 - INFO - [raw sql] ()
+2025-11-02 23:36:14,409 - INFO - show standard_conforming_strings
+2025-11-02 23:36:14,409 - INFO - [raw sql] ()
+2025-11-02 23:36:14,411 - INFO - BEGIN (implicit)
+2025-11-02 23:36:14,420 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:36:14,423 - INFO - [generated in 0.00314s] ('test_user',)
+2025-11-02 23:36:14,431 - INFO - ROLLBACK
+2025-11-02 23:36:14,859 - INFO - BEGIN (implicit)
+2025-11-02 23:36:14,860 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:36:14,861 - INFO - [cached since 0.441s ago] ('test_user',)
+2025-11-02 23:36:14,864 - INFO - ROLLBACK
+2025-11-02 23:39:57,727 - INFO - select pg_catalog.version()
+2025-11-02 23:39:57,728 - INFO - [raw sql] ()
+2025-11-02 23:39:57,732 - INFO - select current_schema()
+2025-11-02 23:39:57,733 - INFO - [raw sql] ()
+2025-11-02 23:39:57,736 - INFO - show standard_conforming_strings
+2025-11-02 23:39:57,736 - INFO - [raw sql] ()
+2025-11-02 23:39:57,740 - INFO - BEGIN (implicit)
+2025-11-02 23:39:57,751 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:39:57,755 - INFO - [generated in 0.00496s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:39:57,775 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:39:57,776 - INFO - [cached since 0.02553s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:39:57,778 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:39:57,780 - INFO - [no key 0.00182s] ()
+2025-11-02 23:39:57,788 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:39:57,789 - INFO - [no key 0.00074s] ()
+2025-11-02 23:39:57,793 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:39:57,796 - INFO - [cached since 0.04536s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:39:57,800 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:39:57,801 - INFO - [cached since 0.05074s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:39:57,805 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:39:57,806 - INFO - [no key 0.00085s] ()
+2025-11-02 23:39:57,846 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:39:57,850 - INFO - [no key 0.00442s] ()
+2025-11-02 23:39:57,862 - INFO - COMMIT
+2025-11-02 23:39:58,033 - INFO - select pg_catalog.version()
+2025-11-02 23:39:58,033 - INFO - [raw sql] ()
+2025-11-02 23:39:58,036 - INFO - select current_schema()
+2025-11-02 23:39:58,037 - INFO - [raw sql] ()
+2025-11-02 23:39:58,040 - INFO - show standard_conforming_strings
+2025-11-02 23:39:58,040 - INFO - [raw sql] ()
+2025-11-02 23:39:58,044 - INFO - BEGIN (implicit)
+2025-11-02 23:39:58,061 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:39:58,063 - INFO - [generated in 0.00173s] ('test_user',)
+2025-11-02 23:39:58,076 - INFO - ROLLBACK
+2025-11-02 23:39:58,489 - INFO - BEGIN (implicit)
+2025-11-02 23:39:58,490 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:39:58,492 - INFO - [cached since 0.4308s ago] ('test_user',)
+2025-11-02 23:39:58,496 - INFO - ROLLBACK
+2025-11-02 23:43:30,905 - INFO - select pg_catalog.version()
+2025-11-02 23:43:30,906 - INFO - [raw sql] ()
+2025-11-02 23:43:30,909 - INFO - select current_schema()
+2025-11-02 23:43:30,909 - INFO - [raw sql] ()
+2025-11-02 23:43:30,913 - INFO - show standard_conforming_strings
+2025-11-02 23:43:30,915 - INFO - [raw sql] ()
+2025-11-02 23:43:30,918 - INFO - BEGIN (implicit)
+2025-11-02 23:43:30,931 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:30,933 - INFO - [generated in 0.00197s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:30,960 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:30,964 - INFO - [cached since 0.03306s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:30,968 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:43:30,969 - INFO - [no key 0.00103s] ()
+2025-11-02 23:43:30,983 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:43:30,985 - INFO - [no key 0.00198s] ()
+2025-11-02 23:43:30,992 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:30,993 - INFO - [cached since 0.06261s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:30,998 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:30,999 - INFO - [cached since 0.06857s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:31,003 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:43:31,005 - INFO - [no key 0.00128s] ()
+2025-11-02 23:43:31,047 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:43:31,047 - INFO - [no key 0.00089s] ()
+2025-11-02 23:43:31,067 - INFO - COMMIT
+2025-11-02 23:43:31,351 - INFO - select pg_catalog.version()
+2025-11-02 23:43:31,352 - INFO - [raw sql] ()
+2025-11-02 23:43:31,354 - INFO - select current_schema()
+2025-11-02 23:43:31,355 - INFO - [raw sql] ()
+2025-11-02 23:43:31,357 - INFO - show standard_conforming_strings
+2025-11-02 23:43:31,358 - INFO - [raw sql] ()
+2025-11-02 23:43:31,360 - INFO - BEGIN (implicit)
+2025-11-02 23:43:31,373 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:43:31,379 - INFO - [generated in 0.00586s] ('test_user',)
+2025-11-02 23:43:31,395 - INFO - ROLLBACK
+2025-11-02 23:43:31,805 - INFO - BEGIN (implicit)
+2025-11-02 23:43:31,806 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:43:31,807 - INFO - [cached since 0.4342s ago] ('test_user',)
+2025-11-02 23:43:31,810 - INFO - ROLLBACK
+2025-11-02 23:43:59,549 - INFO - select pg_catalog.version()
+2025-11-02 23:43:59,549 - INFO - [raw sql] ()
+2025-11-02 23:43:59,553 - INFO - select current_schema()
+2025-11-02 23:43:59,553 - INFO - [raw sql] ()
+2025-11-02 23:43:59,555 - INFO - show standard_conforming_strings
+2025-11-02 23:43:59,556 - INFO - [raw sql] ()
+2025-11-02 23:43:59,558 - INFO - BEGIN (implicit)
+2025-11-02 23:43:59,565 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:59,565 - INFO - [generated in 0.00083s] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:59,588 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:59,589 - INFO - [cached since 0.02398s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:59,592 - INFO - 
+DROP TABLE todolist
+2025-11-02 23:43:59,593 - INFO - [no key 0.00060s] ()
+2025-11-02 23:43:59,599 - INFO - 
+DROP TABLE "user"
+2025-11-02 23:43:59,600 - INFO - [no key 0.00053s] ()
+2025-11-02 23:43:59,603 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:59,609 - INFO - [cached since 0.0439s ago] ('user', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:59,612 - INFO - SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+2025-11-02 23:43:59,614 - INFO - [cached since 0.04892s ago] ('todolist', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+2025-11-02 23:43:59,617 - INFO - 
+CREATE TABLE "user" (
+	userid SERIAL NOT NULL, 
+	username VARCHAR(40), 
+	hashed_pwd VARCHAR(100) NOT NULL, 
+	PRIMARY KEY (userid), 
+	UNIQUE (hashed_pwd)
+)
+
+
+2025-11-02 23:43:59,619 - INFO - [no key 0.00184s] ()
+2025-11-02 23:43:59,653 - INFO - 
+CREATE TABLE todolist (
+	taskid SERIAL NOT NULL, 
+	userid INTEGER, 
+	task_name VARCHAR(200), 
+	task_status VARCHAR(10), 
+	user_state VARCHAR(30), 
+	PRIMARY KEY (taskid), 
+	FOREIGN KEY(userid) REFERENCES "user" (userid)
+)
+
+
+2025-11-02 23:43:59,655 - INFO - [no key 0.00165s] ()
+2025-11-02 23:43:59,668 - INFO - COMMIT
+2025-11-02 23:43:59,832 - INFO - select pg_catalog.version()
+2025-11-02 23:43:59,833 - INFO - [raw sql] ()
+2025-11-02 23:43:59,835 - INFO - select current_schema()
+2025-11-02 23:43:59,835 - INFO - [raw sql] ()
+2025-11-02 23:43:59,838 - INFO - show standard_conforming_strings
+2025-11-02 23:43:59,838 - INFO - [raw sql] ()
+2025-11-02 23:43:59,841 - INFO - BEGIN (implicit)
+2025-11-02 23:43:59,855 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:43:59,858 - INFO - [generated in 0.00284s] ('test_user',)
+2025-11-02 23:43:59,869 - INFO - ROLLBACK
+2025-11-02 23:44:00,253 - INFO - BEGIN (implicit)
+2025-11-02 23:44:00,254 - INFO - SELECT "user".userid, "user".username, "user".hashed_pwd 
+FROM "user" 
+WHERE "user".username = $1::VARCHAR
+2025-11-02 23:44:00,255 - INFO - [cached since 0.3996s ago] ('test_user',)
+2025-11-02 23:44:00,257 - INFO - ROLLBACK
