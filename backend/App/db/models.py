@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-engine=create_async_engine(os.getenv("db_url"),echo=True)
+engine=create_async_engine(os.getenv("supabase_db_url"),echo=True)
 sessionlocal = async_sessionmaker(bind=engine)
 Base =declarative_base()
 
