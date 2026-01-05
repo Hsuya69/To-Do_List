@@ -12,7 +12,7 @@ load_dotenv()
 # access to the values within the .ini file in use.
 config = context.config
 
-database_url = os.getenv("sqlalchemy.url")
+database_url = os.getenv("supabase_sqlalchemy.url")
 if not database_url:
     raise RuntimeError("DATABASE_URL not set")
 
