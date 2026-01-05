@@ -6,7 +6,7 @@ from App.routes import users,delete,insert,update
 app=FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://to-do-list.pages.dev/"],
+    allow_origins=["https://to-do-list.pages.dev"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
