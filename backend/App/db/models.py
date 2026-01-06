@@ -4,11 +4,17 @@ from sqlalchemy import Integer,String,Column,ForeignKey
 from sqlalchemy.ext.asyncio import create_async_engine,async_sessionmaker
 import os
 from dotenv import load_dotenv
+import ssl
+
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
+
 
 load_dotenv()
 engine=create_async_engine(os.getenv("SUPABASE_DB_URL"),
                            echo=True,
-                           connect_args={"ssl":True})
+                           connect_args={"ssl":ssl_context})
 sessionlocal = async_sessionmaker(bind=engine)
 Base =declarative_base()
 

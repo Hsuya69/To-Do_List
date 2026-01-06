@@ -57,7 +57,8 @@ async def login(res:Response,
     res.set_cookie(key="access_token",
                    value=access_token,
                    httponly=True,
-                   samesite="lax",
+                   samesite="none",
+                   secure = True,
                    path="/")
     logger.info(f"cookie created: token{access_token}")
     return {"access_token":access_token,
