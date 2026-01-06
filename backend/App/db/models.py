@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-engine=create_async_engine(os.getenv("supabase_db_url"),
+engine=create_async_engine(os.getenv("SUPABASE_DB_URL"),
                            echo=True,
                            connect_args={"ssl":True})
 sessionlocal = async_sessionmaker(bind=engine)
