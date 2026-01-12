@@ -3,14 +3,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgb(40, 8, 40);
+  background: #00A1E4;
 }
 
 .login form {
-  background: #1a0325;
+  background: #DC0073;
   padding: 45px 70px;
   border-radius: 75px;
-  box-shadow: 0 4px 15px rgba(34, 22, 38, 0.632);
+  box-shadow: 0 4px 15px #6E51AC;
   width: 280px;
   text-align: center;
 }
@@ -23,13 +23,13 @@
   border-radius: 6px;
   font-size: 15px;
   height: 20px;
-  background: #281d2bd9;
+  background: rgba(255, 255, 255, 0.667);
 }
 
 .login button {
   width: 100%;
   padding: 10px;
-  background-color: #9e61bd;
+  background-color: #F5B700;
   color: white;
   border: none;
   border-radius: 6px;

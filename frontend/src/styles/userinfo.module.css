@@ -2,7 +2,7 @@
 .info button{
     font-family: Impact;
     font: 49px;
-    background: #9e61bd;
+    background: #DC0073;
     color: white;
     border: none;
     border-radius: 6px;
@@ -18,6 +18,6 @@
 .info p{
     font-family: impact;
     font-size: 45px;
-    color: rgb(218, 179, 255);
+    color: #F5B700;
     justify-content: center;
 }

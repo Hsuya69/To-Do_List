@@ -1,6 +1,9 @@
 import { useState,useEffect} from "react";
 import { Navigate } from "react-router-dom";
 import api from "../api";
+import {DEV_MODE} from '../config/dev'
+
+
 export default function Potectroute({children}){
     const [authcheck,setAuthcheck]=useState(false)
     const [isauth,setIsauth]=useState(false)
@@ -20,6 +23,10 @@ export default function Potectroute({children}){
         })
         
     },[]);
+
+     if(DEV_MODE){
+        return children;
+     }
 
      if(!authcheck) return <div>checking authentication...</div>
      if(!isauth) return <Navigate to="/login" replace/>;

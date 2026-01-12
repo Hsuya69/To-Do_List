@@ -11,7 +11,7 @@
 .newtask button{
     font-family: Impact;
     font: 49px;
-    background: #9e61bd;
+    background: #F5B700;
     color: white;
     border: none;
     border-radius: 6px;
@@ -29,7 +29,7 @@
 }
 
 .user button:hover {
-  background-color: #460751;
+  background-color: #6E51AC;
 }
 
 
@@ -41,7 +41,7 @@
   border-radius: 6px;
   font-size: 15px;
   height: 20px;
-  background: #281d2bd9;
+  background: #04E762;
   position: relative;
   right: 23px;
 }
@@ -50,7 +50,7 @@
     position: absolute;
     bottom: 40px;
     right: 90px;
-    color: rgba(226, 172, 250, 0.89);
+    color: #DC0073;
     font-family: impact;
     text-decoration: none;
 }
@@ -61,7 +61,7 @@
 }
 
 .task {
-    background-color: #9e61bd;
+    background-color: #DC0073;
     padding: 6px;
     border: #200325;
     border-width: 12%;
@@ -79,7 +79,7 @@
     align-items: right;
     font-family: Impact;
     font: 49px;
-    background: #533f5d;
+    background: #00A1E4;
     color: white;
     border: none;
     border-radius: 6px;
@@ -93,7 +93,7 @@
 }
 
 .user p{
-    color: rgba(226, 172, 250, 0.89);
+    color: #04E762;
     font-family: impact;
     font-size: 23px;
 }

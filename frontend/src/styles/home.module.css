@@ -1,13 +1,14 @@
 .hp h1{
     font-family: Impact;
     font-size: 69px;
-    text-shadow: #da44f5;
+    color: #F5B700;
+    text-shadow: white;
 }
 
 .hp button{
     font-family: Impact;
     font: 49px;
-    background: #9e61bd;
+    background: #DC0073;
     color: white;
     border: none;
     border-radius: 6px;
@@ -21,5 +22,5 @@
 }
 
 .hp button:hover {
-  background-color: #460751;
+  background-color: #04E762;
 }
