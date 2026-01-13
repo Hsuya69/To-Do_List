@@ -23,12 +23,11 @@ export default function Potectroute({children}){
         
     },[]);
 
-     }
 
      if(!authcheck) return <div><p style={{color:"white", fontsize:"14px"}} >checking authentication...</p></div>
      if(!isauth) return <Navigate to="/login" replace/>;
     
     return children;
-
+}
 
  
