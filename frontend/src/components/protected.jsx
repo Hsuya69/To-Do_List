@@ -28,7 +28,7 @@ export default function Potectroute({children}){
         return children;
      }
 
-     if(!authcheck) return <div><p color="white">checking authentication...</p></div>
+     if(!authcheck) return <div><p style="color:white; font-size:14px;" >checking authentication...</p></div>
      if(!isauth) return <Navigate to="/login" replace/>;
     
     return children;
